@@ -1,0 +1,29 @@
+section {
+   display: grid;
+}
+
+h1 {
+   justify-self: center;
+}
+
+article {
+   height: 40em;
+   background-image: url("../assets/praying-with-bible.jpg");
+   background-size: contain;
+   background-position: center;
+   background-repeat: no-repeat;
+   display: grid;
+   justify-content: center;
+   align-items: end;
+   grid-template-columns: max-content max-content;
+   column-gap: 3em;
+}
+
+.link {
+   padding: 1em;
+   font-size: 1.5em;
+   text-decoration: none;
+   color: black;
+   background-color: gold;
+   border-radius: 1em;
+}
