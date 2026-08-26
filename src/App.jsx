@@ -1,11 +1,14 @@
-import { useState } from 'react'
-import './App.css'
+import { Route, Routes } from 'react-router'
+import Layout from './layout/Layout';
+import Main from './home/Home'
 
 function App() {
   return (
-    <>
-      <h1>Prayer</h1>
-    </>
+    <Routes>
+      <Route element={<Layout />}>
+        <Route path="/" element={<Main />} />
+      </Route>
+    </Routes>
   )
 }
 
