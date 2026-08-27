@@ -8,7 +8,6 @@ export const AuthProvider = ({children}) => {
    const API = import.meta.env.VITE_API_URL;
 
    const register = async (credentials) => {
-      console.log(credentials)
       const response = await fetch(API + '/users/register', {
          method: "POST",
          headers: {
@@ -31,6 +30,23 @@ export const AuthProvider = ({children}) => {
    const value = {token, register, logout};
 
    return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>
+}
+
+const login = async (credentials) => {
+   const response = await fetch(API + '/users/login', {
+      method: "POST",
+      headers: {
+         "Content-Type": "application/json"
+      },
+      body: JSON.stringify(credentials)
+   });
+
+   const result = await response.json();
+   if (!response.ok) {
+      throw new Error(result.message)
+   }
+   setToken(result.token)
+   console.log(result);
 }
 
 export const useAuth = () => {
