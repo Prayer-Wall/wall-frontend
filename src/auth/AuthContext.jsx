@@ -25,28 +25,28 @@ export const AuthProvider = ({children}) => {
       setToken(result.token)
    }
 
+   const login = async (credentials) => {
+      const response = await fetch(API + '/users/login', {
+         method: "POST",
+         headers: {
+            "Content-Type": "application/json"
+         },
+         body: JSON.stringify(credentials)
+      });
+
+      const result = await response.json();
+      if (!response.ok) {
+         throw new Error(result.message)
+      }
+      setToken(result.token)
+      console.log(result);
+   }  
+
    const logout = () => {setToken('')};
 
-   const value = {token, register, logout};
+   const value = {token, register, login, logout};
 
    return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>
-}
-
-const login = async (credentials) => {
-   const response = await fetch(API + '/users/login', {
-      method: "POST",
-      headers: {
-         "Content-Type": "application/json"
-      },
-      body: JSON.stringify(credentials)
-   });
-
-   const result = await response.json();
-   if (!response.ok) {
-      throw new Error(result.message)
-   }
-   setToken(result.token)
-   console.log(result);
 }
 
 export const useAuth = () => {
