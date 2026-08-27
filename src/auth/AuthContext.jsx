@@ -25,4 +25,17 @@ export const AuthProvider = ({children}) => {
    }
 
    const logout = () => {setToken('')};
+
+   const value = {token, register, logout};
+
+   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>
+}
+
+export const useAuth = () => {
+   const context = useContext(AuthContext);
+   if (!context) {
+      throw new Error("Must have access to Auth")
+   };
+
+   return context;
 }
