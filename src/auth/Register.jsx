@@ -16,7 +16,7 @@ const Register = () => {
          const password = formData.get("password");
    
          await register({name, username, password});
-         navigate("/")
+         navigate("/wall")
       } catch (e) {
          setError(e.message)
       }
