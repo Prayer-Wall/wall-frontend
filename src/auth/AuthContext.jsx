@@ -8,7 +8,7 @@ export const AuthProvider = ({children}) => {
    const API = import.meta.env.VITE_API_URL;
 
    const register = async (credentials) => {
-      const response = await fetch(API + 'users/register', {
+      const response = await fetch(API + '/users/register', {
          method: "POST",
          headers: {
             "Content-Type": "application"

@@ -7,10 +7,25 @@ const Register = () => {
    const {register} = useAuth();
    const navigate = useNavigate();
 
+   const tryRegister = async (formData) => {
+      try {
+         setError(null);
+   
+         const name = formData.get("firstname");
+         const username = formData.get("username");
+         const password = formData.get("password");
+   
+         await register({name, username, password});
+         navigate("/home")
+      } catch (e) {
+         setError(e.message)
+      }
+   }
+
    return (
       <>
          <h1>Register</h1>
-         <form action="">
+         <form action={tryRegister}>
             <label>
                First Name:
                <input type="text" name="firstname" required/>
@@ -21,11 +36,11 @@ const Register = () => {
             </label>
             <label>
                Password:
-               <input type="text" name="password" required/>
+               <input type="password" name="password" required/>
             </label>
             <label>
                Re-enter Password:
-               <input type="text" name="verify-password" required />
+               <input type="password" name="verify-password" required />
             </label>
             <button>Register</button>
             {error && <p className="error">{error}</p>}

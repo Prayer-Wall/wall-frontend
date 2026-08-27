@@ -9,3 +9,8 @@ header {
    display: grid;
    grid-template-columns: 1fr 5fr 1fr;
 }
+
+.error {
+   font-weight: bold;
+   color: aqua;
+}
