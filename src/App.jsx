@@ -3,6 +3,7 @@ import Layout from './layout/Layout';
 import Home from './home/Home'
 import Register from './auth/Register';
 import Login from './auth/Login';
+import Wall from './prayers/Wall';
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/wall" element={<Wall />} />
       </Route>
     </Routes>
   )
