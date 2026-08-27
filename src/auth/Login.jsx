@@ -7,10 +7,24 @@ const Login = () => {
    const {login} = useAuth();
    const navigate = useNavigate();
 
+   const tryLogin = async (formData) => {
+      try {
+         setError(null);
+   
+         const username = formData.get("username");
+         const password = formData.get("password");
+   
+         await login({username, password});
+         navigate("/")
+      } catch (e) {
+         setError(e.message)
+      }
+   }
+
    return (
       <section>
          <h1>Login</h1>
-         <form action="">
+         <form action={tryLogin}>
             <label>
                Username:
                <input type="text" name="username" required />

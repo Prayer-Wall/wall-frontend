@@ -39,7 +39,6 @@ export const AuthProvider = ({children}) => {
          throw new Error(result.message)
       }
       setToken(result.token)
-      console.log(result);
    }  
 
    const logout = () => {setToken('')};
