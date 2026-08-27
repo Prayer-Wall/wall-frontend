@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useNavigate } from "react-router";
+import { useNavigate, Link } from "react-router";
 import { useAuth } from "./AuthContext";
 
 const Register = () => {
@@ -16,14 +16,14 @@ const Register = () => {
          const password = formData.get("password");
    
          await register({name, username, password});
-         navigate("/home")
+         navigate("/")
       } catch (e) {
          setError(e.message)
       }
    }
 
    return (
-      <>
+      <section>
          <h1>Register</h1>
          <form action={tryRegister}>
             <label>
@@ -44,8 +44,9 @@ const Register = () => {
             </label>
             <button>Register</button>
             {error && <p className="error">{error}</p>}
+            <Link to="/login">Login</Link>
          </form>
-      </>
+      </section>
    )
 
 }
