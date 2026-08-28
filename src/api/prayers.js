@@ -6,6 +6,5 @@ export const getPrayers = async (token) => {
       headers: {Authorization: "Bearer " + token}
    })
    const prayers = await response.json();
-   console.log(prayers)
    return prayers;
 }
