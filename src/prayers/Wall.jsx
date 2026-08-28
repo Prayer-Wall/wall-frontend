@@ -30,7 +30,7 @@ const Wall = () => {
          </aside>
          <section>
             <h1>Prayer Wall</h1>
-            <PrayerList />
+            <PrayerList prayers={prayers} />
          </section>
       </section>
    )
