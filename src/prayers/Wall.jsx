@@ -1,33 +1,38 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router";
 import { getPrayers } from "../api/prayers";
 import { useAuth } from "../auth/AuthContext";
+import PrayerList from "./PrayerList";
 
 const Wall = () => {
    const [prayers, setPrayers] = useState();
    const {token} = useAuth();
+   const navigate = useNavigate();
 
    const syncPrayers = async () => {
       const retrievedPrayers = await getPrayers(token);
       setPrayers(retrievedPrayers);
    }
    
-   useEffect(() => {
+  token ? useEffect(() => {
       syncPrayers();
-   }, [])
+   }, []) : useEffect(() => {
+      navigate("/");
+   }, []) 
 
    if (!prayers) return <h2>Loading....</h2>
 
    return (
-      <>
+      <section id="prayer-page">
          <aside>
             <p>Add Prayer</p>
             <Link to="/">Answered</Link>
          </aside>
          <section>
-            <h1>Wall</h1>
+            <h1>Prayer Wall</h1>
+            <PrayerList />
          </section>
-      </>
+      </section>
    )
 }
 
