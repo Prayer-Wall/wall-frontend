@@ -15,7 +15,7 @@ const Login = () => {
          const password = formData.get("password");
    
          await login({username, password});
-         navigate("/")
+         navigate("/wall")
       } catch (e) {
          setError(e.message)
       }
