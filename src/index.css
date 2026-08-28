@@ -22,9 +22,30 @@ header {
    color: aqua;
 }
 
+.hide {
+   display: none;
+}
+
 #logo {
    display: grid;
    align-items: center;
    justify-content: center;
    font-size: 1.25em;
+}
+
+#links {
+   display: grid;
+   grid-template-columns: 8fr repeat(2, 1fr);
+   grid-template-areas: ". answered wall";
+   align-items: center;
+}
+
+#answered {
+   grid-area: answered;
+   justify-self: end;
+}
+
+#wall-link {
+   grid-area: wall;
+   justify-self: end;
 }
