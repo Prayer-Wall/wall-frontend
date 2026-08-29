@@ -26,7 +26,6 @@ const Wall = () => {
       <section id="prayer-page">
          <aside>
             <p>Add Prayer</p>
-            <Link to="/">Answered</Link>
          </aside>
          <section>
             <h1>Prayer Wall</h1>

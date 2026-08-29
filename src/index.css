@@ -1,16 +1,89 @@
 body {
+   height: 100vh;
+   width: 100vw;
    margin: 0;
    display: grid;
-   background-color: lightslategray;
+   background-color: antiquewhite;
 }
 
 header {
-   font-family: "Spectral", system-ui, sans-serif;
+   width: 90%;
+   padding: 1em;
+   font-family: "Grenze Gotisch", serif;
+   justify-self: center;
    display: grid;
    grid-template-columns: 1fr 5fr 1fr;
+   background-color: #2e253c;
+   border: solid;
+   border-radius: 2em;
+   box-shadow: 5px 5px 25px;
 }
 
 .error {
    font-weight: bold;
    color: aqua;
+}
+
+.hide {
+   display: none;
+}
+
+#logo {
+   display: grid;
+   align-items: center;
+   justify-content: center;
+   font-size: 1.4em;
+   color: #F4C430;
+}
+
+#logo h2 {
+   margin: 0;
+}
+
+#links {
+   display: grid;
+   grid-template-columns: 8fr repeat(2, 1fr);
+   grid-template-areas: ". answered wall";
+   align-items: center;
+}
+
+#links a,
+#logout-link {
+   height: fit-content;
+   text-decoration: none;
+   font-weight: bolder;
+   font-size: 1.4em;
+   color: #F4C430;
+}
+
+#answered {
+   grid-area: answered;
+   justify-self: end;
+}
+
+#wall-link {
+   grid-area: wall;
+   justify-self: end;
+}
+
+#logout {
+   display: grid;
+   align-items: center;
+   justify-content: center;
+}
+
+#logout-link {
+   margin: 0;
+   padding: 0.1em;
+   border-radius: 0.3em;
+}
+
+#logo h2:hover,
+#logout-link:hover {
+   cursor: pointer;
+}
+
+#logout-link:hover,
+#links a:hover {
+   text-decoration: underline;
 }
