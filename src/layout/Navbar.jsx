@@ -2,7 +2,7 @@ import { useAuth } from "../auth/AuthContext";
 import { NavLink, useNavigate } from "react-router";
 
 const Navbar = () => {
-   const {token} = useAuth();
+   const {token, logout} = useAuth();
    const navigate = useNavigate();
 
    return (
@@ -18,7 +18,7 @@ const Navbar = () => {
                </section> : <></>
          }
          <section id="logout">
-            {token ? <p>Logout link</p> : <p></p>}
+            {token ? <p id="logout-link" onClick={() => {logout(); navigate("/");}}>Logout</p> : <p></p>}
          </section>
       </header>
    )
