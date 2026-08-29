@@ -1,3 +1,5 @@
+import "./prayer.css"
+
 const PrayerList = ({prayers}) => {
    return (
       <ul>
