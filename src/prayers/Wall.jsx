@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router";
 import { getPrayers } from "../api/prayers";
 import { useAuth } from "../auth/AuthContext";
 import PrayerList from "./PrayerList";
+import "./wall.css"
 
 const Wall = () => {
    const [prayers, setPrayers] = useState();
