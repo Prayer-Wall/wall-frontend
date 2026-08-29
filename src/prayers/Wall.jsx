@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Link, useNavigate } from "react-router";
+import { useNavigate } from "react-router";
 import { getPrayers } from "../api/prayers";
 import { useAuth } from "../auth/AuthContext";
 import PrayerList from "./PrayerList";
@@ -26,7 +26,7 @@ const Wall = () => {
    return (
       <section id="prayer-page">
          <aside>
-            <p>Add Prayer</p>
+            <p id="add-prayer">Add Prayer</p>
          </aside>
          <section id="prayer-wall">
             <h1>Prayer Wall</h1>
