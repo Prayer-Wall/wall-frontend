@@ -3,11 +3,13 @@ body {
    width: 100vw;
    margin: 0;
    display: grid;
-   background-color: antiquewhite;
+   background-color: whitesmoke;
+   grid-template-areas: ". root .";
+   grid-template-columns: 1fr 8fr 1fr;
 }
 
 header {
-   width: 90%;
+   width: 100%;
    padding: 1em;
    font-family: "Grenze Gotisch", serif;
    justify-self: center;
@@ -26,6 +28,13 @@ header {
 
 .hide {
    display: none;
+}
+
+#root {
+   grid-area: root;
+   display: grid;
+   grid-template-rows: 1fr 10fr 1fr;
+   row-gap: 3em;
 }
 
 #logo {
