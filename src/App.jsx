@@ -4,6 +4,8 @@ import Home from './home/Home'
 import Register from './auth/Register';
 import Login from './auth/Login';
 import Wall from './prayers/Wall';
+import AddPrayer from './prayers/AddPrayer';
+import Page404 from './404/404';
 
 function App() {
   return (
@@ -13,6 +15,8 @@ function App() {
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
         <Route path="/wall" element={<Wall />} />
+        <Route path="/add" element={<AddPrayer />} />
+        <Route path="*" element={<Page404 />} />
       </Route>
     </Routes>
   )
