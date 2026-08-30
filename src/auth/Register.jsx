@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate, Link } from "react-router";
 import { useAuth } from "./AuthContext";
+import "./auth.css"
 
 const Register = () => {
    const [error, setError] = useState('');
@@ -23,9 +24,9 @@ const Register = () => {
    }
 
    return (
-      <section>
+      <section id="register">
          <h1>Register</h1>
-         <form action={tryRegister}>
+         <form id="register-form" action={tryRegister}>
             <label>
                First Name:
                <input type="text" name="firstname" required/>

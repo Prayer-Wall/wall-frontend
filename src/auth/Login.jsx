@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useAuth } from "./AuthContext";
 import { useNavigate, Link } from "react-router";
+import "./auth.css"
 
 const Login = () => {
    const [error, setError] = useState('');
@@ -22,15 +23,15 @@ const Login = () => {
    }
 
    return (
-      <section>
+      <section id="login">
          <h1>Login</h1>
-         <form action={tryLogin}>
+         <form id="login-form" action={tryLogin}>
             <label>
                Username:
                <input type="text" name="username" required />
             </label>
             <label>
-               Password:
+               Password :
                <input type="password" name="password" required />
             </label>
             <button>Login</button>
