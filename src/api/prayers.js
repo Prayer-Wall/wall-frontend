@@ -12,7 +12,10 @@ export const getPrayers = async (token) => {
 export const addPrayer = async (token, prayer) => {
    const response = await fetch(API + "/prayers/add", {
       method: "POST",
-      headers: {Authorization: "Bearer " + token},
+      headers: {
+         Authorization: "Bearer " + token,
+         "Content-Type": "application/json"
+      },
       body: JSON.stringify(prayer)
    });
 

@@ -18,9 +18,3 @@ li {
    border-radius: 0 3em;
    font-size: 1.2em;
 }
-
-#prayer-form {
-   width: 70%;
-   display: grid;
-   grid-template-rows: 5fr 1fr;
-}

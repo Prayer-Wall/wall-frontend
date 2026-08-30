@@ -45,16 +45,36 @@ aside {
    display: grid;
    grid-template-rows: 0fr 5fr;
    row-gap: 2em;
-   background-color: c;
 }
 
-#add-prayer:hover {
+#prayer-form {
+   justify-self: center;
+   width: 70%;
+   display: grid;
+   grid-template-rows: 5fr 1fr;
+   grid-template-columns: 1fr;
+   row-gap: 1em;
+}
+
+#prayer-form-add {
+   padding: 1em 2em;
+   background-color: #2e253c;
+   color: #F4C430;
+   font-size: 1.2em;
+   width: fit-content;
+   border-radius: 1em;
+   justify-self: center;
+}
+
+#add-prayer:hover,
+#prayer-form-add:hover {
    background-color: #F4C430;
    color: #2e253c;
    box-shadow: 3px 3px 15px;
    cursor: pointer;
 }
 
-#add-prayer:active {
+#add-prayer:active,
+#prayer-form-add:active {
    box-shadow: none;
 }
