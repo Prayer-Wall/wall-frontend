@@ -5,7 +5,6 @@ h1 {
 
 aside,
 #prayer-wall {
-   min-height: 30em;
    border: solid;
    border-width: 0.5em;
    border-radius: 0 3em;
@@ -14,11 +13,9 @@ aside,
 aside {
    display: grid;
    justify-content: center;
-   grid-template-areas: 
-   "."
-   "add";
-   grid-template-rows: 0.5fr 7fr;
+   grid-template-areas: "add";
    box-shadow: 3px 3px 15px;
+   height: 10em;
 }
 
 #add-prayer {
@@ -29,7 +26,9 @@ aside {
    border-radius: 1em;
    background-color: #2e253c;
    color: #F4C430;
+   font-weight: bold;
    font-size: 1.3em;
+   align-self: center;
 }
 
 #prayer-page {
@@ -41,10 +40,16 @@ aside {
 }
 
 #prayer-wall {
+   min-height: 30em;
    box-shadow: 5px 5px 25px;
    display: grid;
    grid-template-rows: 0fr 5fr;
    row-gap: 2em;
+   background-color: #545454;
+}
+
+#prayer-wall h1 {
+   color: #F9F8F0;
 }
 
 #prayer-form {
