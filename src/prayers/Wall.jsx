@@ -26,7 +26,7 @@ const Wall = () => {
    return (
       <section id="prayer-page">
          <aside>
-            <p id="add-prayer">Add Prayer</p>
+            <p id="add-prayer" onClick={() => navigate("/add")}>Add Prayer</p>
          </aside>
          <section id="prayer-wall">
             <h1>Prayer Wall</h1>

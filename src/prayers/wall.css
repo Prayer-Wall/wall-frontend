@@ -5,7 +5,6 @@ h1 {
 
 aside,
 #prayer-wall {
-   min-height: 30em;
    border: solid;
    border-width: 0.5em;
    border-radius: 0 3em;
@@ -14,11 +13,9 @@ aside,
 aside {
    display: grid;
    justify-content: center;
-   grid-template-areas: 
-   "."
-   "add";
-   grid-template-rows: 0.5fr 7fr;
+   grid-template-areas: "add";
    box-shadow: 3px 3px 15px;
+   height: 10em;
 }
 
 #add-prayer {
@@ -29,7 +26,9 @@ aside {
    border-radius: 1em;
    background-color: #2e253c;
    color: #F4C430;
+   font-weight: bold;
    font-size: 1.3em;
+   align-self: center;
 }
 
 #prayer-page {
@@ -41,20 +40,46 @@ aside {
 }
 
 #prayer-wall {
+   min-height: 30em;
    box-shadow: 5px 5px 25px;
    display: grid;
    grid-template-rows: 0fr 5fr;
    row-gap: 2em;
-   background-color: c;
+   background-color: #545454;
 }
 
-#add-prayer:hover {
+#prayer-wall h1 {
+   color: #F9F8F0;
+}
+
+#prayer-form {
+   justify-self: center;
+   width: 70%;
+   display: grid;
+   grid-template-rows: 5fr 1fr;
+   grid-template-columns: 1fr;
+   row-gap: 1em;
+}
+
+#prayer-form-add {
+   padding: 1em 2em;
+   background-color: #2e253c;
+   color: #F4C430;
+   font-size: 1.2em;
+   width: fit-content;
+   border-radius: 1em;
+   justify-self: center;
+}
+
+#add-prayer:hover,
+#prayer-form-add:hover {
    background-color: #F4C430;
    color: #2e253c;
    box-shadow: 3px 3px 15px;
    cursor: pointer;
 }
 
-#add-prayer:active {
+#add-prayer:active,
+#prayer-form-add:active {
    box-shadow: none;
 }
