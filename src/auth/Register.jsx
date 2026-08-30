@@ -26,7 +26,7 @@ const Register = () => {
    return (
       <section id="register">
          <h1>Register</h1>
-         <form id="register-form" action={tryRegister}>
+         <form className="log-reg-form" action={tryRegister}>
             <label>
                First Name:
                <input type="text" name="firstname" required/>
@@ -39,7 +39,7 @@ const Register = () => {
                Password:
                <input type="password" name="password" required/>
             </label>
-            <label>
+            <label id="re-password">
                Re-enter Password:
                <input type="password" name="verify-password" required />
             </label>

@@ -1,7 +1,36 @@
-#login {
+input {
+   width: 18em;
+   font-size: 0.8em;
+}
+
+#login h1,
+#register h1 {
+   height: max-content;
+}
+
+label {
+   justify-self: center;
+   display: grid;
+   grid-template-columns: 2fr 3fr;
+   column-gap: 1em;
+}
+
+.log-reg-form button {
+   width: max-content;
+   justify-self: end;
+   font-size: 1em;
+}
+
+.log-reg-form a {
+   justify-self: end;
+   color: #2e253c;
+   text-decoration: none;
+}
+
+#login,
+#register {
    justify-self: center;
    width: 40em;
-   height: 20em;
    display: grid;
    grid-template-rows: max-content max-content;
    row-gap: 2em;
@@ -10,32 +39,21 @@
    box-shadow: 5px 10px 25px;
 }
 
-#login h1 {
-   margin: 0;
-   padding: 1em;
+#login {
+   height: 20em;
+}
+#register {
+   height: 25em;
+   grid-template-rows: repeat(3, max-content);
 }
 
-#login-form {
+.log-reg-form {
    display: grid;
    row-gap: 1em;
    justify-content: center;
    font-size: 1.3em;
 }
 
-#login-form label {
-   display: grid;
-   grid-template-columns: repeat(2, max-content);
-   column-gap: 1em;
-}
-
-#login-form button {
-   width: max-content;
-   justify-self: end;
-   font-size: 1em;
-}
-
-#login-form a {
-   justify-self: end;
-   color: #2e253c;
-   text-decoration: none;
+.log-reg-form a:hover {
+   text-decoration: underline;
 }

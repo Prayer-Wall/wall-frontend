@@ -25,13 +25,13 @@ const Login = () => {
    return (
       <section id="login">
          <h1>Login</h1>
-         <form id="login-form" action={tryLogin}>
+         <form className="log-reg-form" action={tryLogin}>
             <label>
                Username:
                <input type="text" name="username" required />
             </label>
             <label>
-               Password :
+               Password:
                <input type="password" name="password" required />
             </label>
             <button>Login</button>
