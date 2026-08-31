@@ -7,7 +7,7 @@ export const getPrayers = async (token) => {
    })
    const prayers = await response.json();
    return prayers;
-}
+};
 
 export const addPrayer = async (token, prayer) => {
    const response = await fetch(API + "/prayers/add", {
@@ -21,7 +21,28 @@ export const addPrayer = async (token, prayer) => {
 
    const result = await response.json();
    if (!response.ok) {
-      throw new Error(response.message)
+      throw new Error(result.message)
    }
    return result;
+};
+
+export const editPrayer = async(token, id) => {
+   const response = await fetch(API + "prayer/edit", {
+      method: "PUT",
+      headers: {
+         Authorization: "Bearer " + token,
+         "Content-Type": "application/json"
+      },
+      body: JSON.stringify(id)
+   });
+
+   const result = await response.json();
+   if (!response.ok) {
+      throw new Error(result.message)
+   }
+   return result;
+}
+
+export const deletePrayer = async(token, id) => {
+
 }

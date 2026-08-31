@@ -12,7 +12,13 @@ const PrayerList = ({prayers}) => {
 
 const PrayerListItem = ({prayer}) => {
    return (
-      <li>{prayer.prayer}</li>
+      <li>
+         {prayer.prayer}
+         <section className="prayer-btns">
+            <p className="edit-btn">Edit</p>
+            <p className="delete-btn">Delete</p>
+         </section>
+      </li>
    )
 }
 
