@@ -9,6 +9,16 @@ export const getPrayers = async (token) => {
    return prayers;
 };
 
+export const getPrayerById = async (token, id) => {
+   const response = await fetch(API + "/prayers/" + id, {
+      method: "GET",
+      headers: {Authorization: "Bearer " + token}
+   })
+
+   const prayer = await response.json();
+   return prayer.prayer;
+}
+
 export const addPrayer = async (token, prayer) => {
    const response = await fetch(API + "/prayers/add", {
       method: "POST",
@@ -26,14 +36,14 @@ export const addPrayer = async (token, prayer) => {
    return result;
 };
 
-export const editPrayer = async(token, id) => {
-   const response = await fetch(API + "prayer/edit", {
+export const editPrayer = async(token, prayer, id) => {
+   const response = await fetch(API + "/prayers/" + id, {
       method: "PUT",
       headers: {
          Authorization: "Bearer " + token,
          "Content-Type": "application/json"
       },
-      body: JSON.stringify(id)
+      body: JSON.stringify(prayer)
    });
 
    const result = await response.json();

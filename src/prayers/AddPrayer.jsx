@@ -7,20 +7,7 @@ import "./prayer.css"
 const AddPrayer = () => {
    const [error, setError] = useState();
    const {token} = useAuth();
-   const navigate = useNavigate();
-   
-   const tryEditPrayer = async (formData) => {
-      try {
-         setError(null)
-
-         const prayer = {prayer: formData.get("prayer")}
-
-         await editPrayer(token, prayer)
-         navigate("/wall")
-      } catch (e) {
-         setError(e.message)
-      }
-   }   
+   const navigate = useNavigate(); 
 
    const tryAddPrayer = async (formData) => {
       try {
