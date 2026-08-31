@@ -1,3 +1,4 @@
+import {Link} from "react-router"
 import "./prayer.css"
 
 const PrayerList = ({prayers}) => {
@@ -14,10 +15,7 @@ const PrayerListItem = ({prayer}) => {
    return (
       <li>
          {prayer.prayer}
-         <section className="prayer-btns">
-            <p className="edit-btn">Edit</p>
-            <p className="delete-btn">Delete</p>
-         </section>
+         <Link to={"/edit/" +prayer.id}>Edit</Link>
       </li>
    )
 }

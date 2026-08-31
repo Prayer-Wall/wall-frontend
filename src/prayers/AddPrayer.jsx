@@ -1,13 +1,26 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useAuth } from "../auth/AuthContext";
-import { addPrayer } from "../api/prayers";
+import { addPrayer, editPrayer } from "../api/prayers";
 import { useNavigate } from "react-router";
 import "./prayer.css"
 
 const AddPrayer = () => {
    const [error, setError] = useState();
    const {token} = useAuth();
-   const navigate = useNavigate()
+   const navigate = useNavigate();
+   
+   const tryEditPrayer = async (formData) => {
+      try {
+         setError(null)
+
+         const prayer = {prayer: formData.get("prayer")}
+
+         await editPrayer(token, prayer)
+         navigate("/wall")
+      } catch (e) {
+         setError(e.message)
+      }
+   }   
 
    const tryAddPrayer = async (formData) => {
       try {
@@ -17,7 +30,6 @@ const AddPrayer = () => {
             prayer: formData.get("prayer")
          }
          
-
          await addPrayer(token, prayer)
          navigate("/wall")
       } catch (e) {
@@ -27,7 +39,7 @@ const AddPrayer = () => {
  
    return (
       <form id="prayer-form" action={tryAddPrayer}>
-         <textarea type="text" name="prayer" required />
+         <textarea name="prayer" placeholder="Add prayer" required />
          <button id="prayer-form-add">Add</button>
          {error && <p className="error">{error}</p>}
       </form>
