@@ -54,5 +54,17 @@ export const editPrayer = async(token, prayer, id) => {
 }
 
 export const deletePrayer = async(token, id) => {
+   const response = await fetch(API + "/prayers/" + id, {
+      method: "DELETE",
+      headers: {
+         Authorization: "Bearer " + token,
+         "Content-Type": "application/json"
+      }
+   });
 
+   const result = await response.json();
+   if (!response.ok) {
+      throw new Error(result.message)
+   };
+   return result
 }
