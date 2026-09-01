@@ -1,7 +1,7 @@
 import { useParams, useNavigate } from "react-router";
 import { useAuth } from "../auth/AuthContext";
 import { useEffect, useState } from "react";
-import { editPrayer, getPrayerById } from "../api/prayers";
+import { deletePrayer, editPrayer, getPrayerById } from "../api/prayers";
 import "./prayer.css";
 
 const EditPrayer = () => {
@@ -33,6 +33,16 @@ const EditPrayer = () => {
     }
   };
 
+  const tryDeletePrayer = async () => {
+   try {
+      setError(null);
+      await deletePrayer(token, id);
+      navigate("/wall")
+   } catch (e) {
+      setError(e.message)
+   }
+  }
+
   if (!prayer) return <p>Loading...</p>;
 
   return (
@@ -48,7 +58,7 @@ const EditPrayer = () => {
         <button id="prayer-form-add">Save</button>
         {error && <p className="error">{error}</p>}
       </form>
-      <p className="delete">Delete</p>
+      <p className="delete" onClick={() => tryDeletePrayer()}>Delete</p>
     </section>
   );
 };
