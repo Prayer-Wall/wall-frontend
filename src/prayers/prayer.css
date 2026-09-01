@@ -19,3 +19,27 @@ li {
    font-size: 1.2em;
    background-color: #F9F8F0;
 }
+
+.delete {
+   padding: 1em;
+   font-size: 1.3em;
+   justify-self: center;
+   border-radius: 1em;
+   background-color: red;
+   color: white;
+}
+
+#edit-pg {
+   display: grid;
+   row-gap: 1em;
+}
+
+.delete:hover {
+   box-shadow: 3px 3px 15px red;
+   background-color: maroon;
+   cursor: pointer;
+}
+
+.delete:active {
+   box-shadow: none;
+}
