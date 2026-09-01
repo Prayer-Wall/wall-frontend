@@ -1,4 +1,4 @@
-import {Link} from "react-router"
+import {Link, useNavigate} from "react-router"
 import "./prayer.css"
 
 const PrayerList = ({prayers}) => {
@@ -12,10 +12,11 @@ const PrayerList = ({prayers}) => {
 }
 
 const PrayerListItem = ({prayer}) => {
+   const navigate = useNavigate();
+
    return (
-      <li>
+      <li onClick={() => navigate("/edit/" + prayer.id)}>
          {prayer.prayer}
-         <Link to={"/edit/" +prayer.id}>Edit</Link>
       </li>
    )
 }
