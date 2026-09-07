@@ -27,6 +27,7 @@ const AddPrayer = () => {
          }
          
          await addPrayer(token, prayer)
+         setText("")
          navigate("/wall")
       } catch (e) {
          setError(e.message)
@@ -35,7 +36,10 @@ const AddPrayer = () => {
  
    return (
       <form id="prayer-form" action={tryAddPrayer} encType="multipart/form-data">
-         <input type="file" name="img"/>
+         <label className="image-upload">
+            <input type="file" name="img"/>
+            Upload image (Optional)
+         </label>
          <textarea 
             name="prayer" 
             placeholder="Add prayer"
