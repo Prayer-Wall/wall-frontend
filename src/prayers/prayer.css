@@ -21,6 +21,11 @@ li {
    overflow: scroll;
 }
 
+.prayer-img {
+   max-width: 7em;
+   max-height: 7em;
+}
+
 .delete {
    padding: 1em;
    font-size: 1.3em;

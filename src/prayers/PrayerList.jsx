@@ -16,7 +16,7 @@ const PrayerListItem = ({prayer}) => {
 
    return (
       <li onClick={() => navigate("/edit/" + prayer.id)}>
-         <img src={`http://localhost:3000/api/images/${prayer.image}`} alt="" />
+         <img className="prayer-img" src={`http://localhost:3000/api/images/${prayer.image}`} alt="" />
          {prayer.prayer}
       </li>
    )

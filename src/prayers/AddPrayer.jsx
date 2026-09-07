@@ -13,20 +13,12 @@ const AddPrayer = () => {
    const tryAddPrayer = async (formData) => {
       try {
          setError(null)
-         let image = null;
          const formImage = formData.get("img");
-         if (formImage.name === '') {
-            image = image;
-         } else if (formImage.type !== "image/png" || formImage.type !== "image/jpeg") {
+         if (formImage.type !== "image/png" && formImage.type !== "image/jpeg") {
             throw new Error("Image must be a JPEG or PNG file");
          }
          
-         const prayer = {
-            image,
-            prayer: formData.get("prayer")
-         }
-         
-         await addPrayer(token, prayer)
+         await addPrayer(token, formData)
          setText("")
          navigate("/wall")
       } catch (e) {

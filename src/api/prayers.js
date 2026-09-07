@@ -24,9 +24,8 @@ export const addPrayer = async (token, prayer) => {
       method: "POST",
       headers: {
          Authorization: "Bearer " + token,
-         "Content-Type": "application/json"
       },
-      body: JSON.stringify(prayer)
+      body: prayer
    });
 
    const result = await response.json();
