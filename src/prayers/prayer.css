@@ -19,6 +19,16 @@ li {
    font-size: 1.2em;
    background-color: #F9F8F0;
    overflow: scroll;
+   display: grid;
+   grid-template-rows: repeat(2, max-content);
+   row-gap: 1em;
+}
+
+.image-upload {
+   display: grid;
+   grid-template-rows: max-content;
+   grid-template-columns: none;
+   row-gap: 1em;
 }
 
 .prayer-img {

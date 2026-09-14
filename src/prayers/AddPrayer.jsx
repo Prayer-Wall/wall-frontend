@@ -14,13 +14,14 @@ const AddPrayer = () => {
       try {
          setError(null)
          const formImage = formData.get("img");
-         if (formImage.type !== "image/png" && formImage.type !== "image/jpeg") {
+         if (formImage.name === "" || formImage.type === "image/jpeg" || formImage.type === "image/png") {
+            await addPrayer(token, formData)
+            setText("")
+            navigate("/wall")
+         } else {
             throw new Error("Image must be a JPEG or PNG file");
          }
          
-         await addPrayer(token, formData)
-         setText("")
-         navigate("/wall")
       } catch (e) {
          setError(e.message)
       }
@@ -29,8 +30,8 @@ const AddPrayer = () => {
    return (
       <form id="prayer-form" action={tryAddPrayer} encType="multipart/form-data">
          <label className="image-upload">
-            <input type="file" name="img"/>
             Upload image (Optional)
+            <input type="file" name="img"/>
          </label>
          <textarea 
             name="prayer" 
