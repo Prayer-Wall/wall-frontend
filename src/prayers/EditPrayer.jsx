@@ -9,11 +9,13 @@ const EditPrayer = () => {
   const { token } = useAuth();
   const [error, setError] = useState();
   const [prayer, setPrayer] = useState();
+  const [prayerImg, setPrayerImg] = useState();
   const navigate = useNavigate();
 
   const getPrayer = async () => {
     const currentPrayer = await getPrayerById(token, id);
-    setPrayer(currentPrayer);
+    setPrayerImg(currentPrayer.image);
+    setPrayer(currentPrayer.prayer);
   };
 
   useEffect(() => {
@@ -53,7 +55,8 @@ const EditPrayer = () => {
       <h1>Edit Prayer</h1>
       <form class="prayer-form" action={tryEditPrayer} encType="multipart/form-data">
         <label className="image-upload">
-          Upload image (Optional)
+          <img id="edit-img" src={`http://localhost:3000/api/images/${prayerImg}`} alt="" />
+          Change image (Optional)
           <input type="file" name="img"/>
         </label>
         <textarea

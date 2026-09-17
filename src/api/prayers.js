@@ -16,7 +16,7 @@ export const getPrayerById = async (token, id) => {
    })
 
    const prayer = await response.json();
-   return prayer.prayer;
+   return prayer;
 }
 
 export const addPrayer = async (token, prayer) => {

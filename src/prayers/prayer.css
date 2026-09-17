@@ -63,6 +63,11 @@ textarea {
    row-gap: 1em;
 }
 
+#edit-img {
+   max-width: 40em;
+   max-height: 20em;
+}
+
 li:hover {
    box-shadow: 5px 5px 15px white;
    cursor: pointer;
