@@ -28,7 +28,7 @@ const AddPrayer = () => {
    }
  
    return (
-      <form id="prayer-form" action={tryAddPrayer} encType="multipart/form-data">
+      <form class="prayer-form" action={tryAddPrayer} encType="multipart/form-data">
          <label className="image-upload">
             Upload image (Optional)
             <input type="file" name="img"/>

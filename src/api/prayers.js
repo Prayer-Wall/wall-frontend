@@ -40,9 +40,8 @@ export const editPrayer = async(token, prayer, id) => {
       method: "PUT",
       headers: {
          Authorization: "Bearer " + token,
-         "Content-Type": "application/json"
       },
-      body: JSON.stringify(prayer)
+      body: prayer
    });
 
    const result = await response.json();

@@ -23,11 +23,14 @@ const EditPrayer = () => {
   const tryEditPrayer = async (formData) => {
     try {
       setError(null);
-
-      const newPrayer = { prayer: formData.get("prayer") };
-
-      await editPrayer(token, newPrayer, id);
-      navigate("/wall");
+      const formImage = formData.get("img");
+        if (formImage.name === "" || formImage.type === "image/jpeg" || formImage.type === "image/png") {
+          await editPrayer(token, formData, id);
+          setPrayer("")
+          navigate("/wall")
+        } else {
+          throw new Error("Image must be a JPEG or PNG file");
+        }
     } catch (e) {
       setError(e.message);
     }
@@ -48,7 +51,11 @@ const EditPrayer = () => {
   return (
     <section id="edit-pg">
       <h1>Edit Prayer</h1>
-      <form id="prayer-form" action={tryEditPrayer}>
+      <form class="prayer-form" action={tryEditPrayer} encType="multipart/form-data">
+        <label className="image-upload">
+          Upload image (Optional)
+          <input type="file" name="img"/>
+        </label>
         <textarea
           name="prayer"
           value={prayer}
