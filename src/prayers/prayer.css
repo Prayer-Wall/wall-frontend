@@ -52,12 +52,6 @@ textarea {
    color: white;
 }
 
-.prayer-form {
-   display: grid;
-   grid-template-rows: repeat(3, max-content);
-   row-gap: 1em;
-}
-
 #edit-pg {
    display: grid;
    row-gap: 1em;
