@@ -1,3 +1,4 @@
+import {Link, useNavigate} from "react-router"
 import "./prayer.css"
 
 const PrayerList = ({prayers}) => {
@@ -11,8 +12,13 @@ const PrayerList = ({prayers}) => {
 }
 
 const PrayerListItem = ({prayer}) => {
+   const navigate = useNavigate();
+
    return (
-      <li>{prayer.prayer}</li>
+      <li onClick={() => navigate("/edit/" + prayer.id)}>
+         <img className="prayer-img" src={`http://localhost:3000/api/images/${prayer.image}`} alt="" />
+         {prayer.prayer}
+      </li>
    )
 }
 

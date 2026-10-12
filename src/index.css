@@ -23,7 +23,7 @@ header {
 
 .error {
    font-weight: bold;
-   color: aqua;
+   color: red;
 }
 
 .hide {
@@ -33,7 +33,7 @@ header {
 #root {
    grid-area: root;
    display: grid;
-   grid-template-rows: 1fr 10fr 1fr;
+   grid-template-rows: max-content max-content 1fr;
    row-gap: 3em;
 }
 
