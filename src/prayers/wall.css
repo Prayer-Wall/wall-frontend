@@ -3,21 +3,6 @@ h1 {
   margin-bottom: 0;
 }
 
-aside,
-#prayer-wall {
-  border: solid;
-  border-width: 0.5em;
-  border-radius: 0 3em;
-}
-
-aside {
-  display: grid;
-  justify-content: center;
-  grid-template-areas: "add";
-  box-shadow: 3px 3px 15px;
-  height: 10em;
-}
-
 #add-prayer {
   height: fit-content;
   grid-area: add;

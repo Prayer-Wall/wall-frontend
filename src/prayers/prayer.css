@@ -30,11 +30,16 @@ textarea {
    min-width: 40em;
 }
 
+input {
+   justify-self: center;
+}
+
 .image-upload {
    display: grid;
    grid-template-rows: repeat(2, max-content);
    grid-template-columns: none;
-   row-gap: 1em ;
+   row-gap: 1em;
+   text-align: center;
 }
 
 .prayer-img {
@@ -50,6 +55,13 @@ textarea {
    border-radius: 1em;
    background-color: red;
    color: white;
+}
+
+.prayer-form {
+   display: grid;
+   grid-template-rows: repeat(3, max-content);
+   grid-template-columns: 1fr;
+   row-gap: 1em;
 }
 
 #edit-pg {

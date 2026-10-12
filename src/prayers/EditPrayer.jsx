@@ -2,7 +2,7 @@ import { useParams, useNavigate } from "react-router";
 import { useAuth } from "../auth/AuthContext";
 import { useEffect, useState } from "react";
 import { deletePrayer, editPrayer, getPrayerById } from "../api/prayers";
-import "./prayer.css";
+import "./wall.css";
 
 const EditPrayer = () => {
   const { id } = useParams();
@@ -55,7 +55,7 @@ const EditPrayer = () => {
       <h1>Edit Prayer</h1>
       <form class="prayer-form" action={tryEditPrayer} encType="multipart/form-data">
         <label className="image-upload">
-          <img id="edit-img" src={`http://localhost:3000/api/images/${prayerImg}`} alt="" />
+          {prayerImg && <img id="edit-img" src={`http://localhost:3000/api/images/${prayerImg}`} alt="" />}
           Change image (Optional)
           <input type="file" name="img"/>
         </label>
